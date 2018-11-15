@@ -1,0 +1,188 @@
+#! /usr/bin/vvp
+:ivl_version "10.1 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 4;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x7fffcadc6320 .scope module, "Ej1Moore_TB" "Ej1Moore_TB" 2 2;
+ .timescale -4 -4;
+v0x7fffcade7b10_0 .net "B1", 0 0, v0x7fffcade6800_0;  1 drivers
+v0x7fffcade7bd0_0 .net "B2", 0 0, v0x7fffcade68c0_0;  1 drivers
+v0x7fffcade7ca0_0 .net "Clock", 0 0, v0x7fffcadc67f0_0;  1 drivers
+v0x7fffcade7d70_0 .var "I", 0 0;
+v0x7fffcade7e10_0 .var "R", 0 0;
+v0x7fffcade7f00_0 .var "S", 0 0;
+S_0x7fffcadc64a0 .scope module, "Clk" "clock_gen" 2 8, 2 57 0, S_0x7fffcadc6320;
+ .timescale -4 -4;
+    .port_info 0 /OUTPUT 1 "clk"
+P_0x7fffcadbf740 .param/l "PERIOD" 0 2 59, +C4<00000000000000000000000000001010>;
+v0x7fffcadc67f0_0 .var "clk", 0 0;
+S_0x7fffcadc6620 .scope begin, "CLOCK_DRIVER" "CLOCK_DRIVER" 2 64, 2 64 0, S_0x7fffcadc64a0;
+ .timescale -4 -4;
+S_0x7fffcade6490 .scope module, "Ej" "Ej1Moore" 2 9, 2 75 0, S_0x7fffcadc6320;
+ .timescale -4 -4;
+    .port_info 0 /INPUT 1 "Clock"
+    .port_info 1 /INPUT 1 "R"
+    .port_info 2 /INPUT 1 "S"
+    .port_info 3 /INPUT 1 "I"
+    .port_info 4 /OUTPUT 1 "B1"
+    .port_info 5 /OUTPUT 1 "B2"
+L_0x7fffcadb7770 .functor NOT 1, v0x7fffcade7f00_0, C4<0>, C4<0>, C4<0>;
+L_0x7fffcade8050 .functor AND 1, L_0x7fffcadb7770, v0x7fffcade7d70_0, C4<1>, C4<1>;
+L_0x7fffcade8160 .functor NOT 1, v0x7fffcade7d70_0, C4<0>, C4<0>, C4<0>;
+L_0x7fffcade81d0 .functor NOT 1, v0x7fffcade7f00_0, C4<0>, C4<0>, C4<0>;
+L_0x7fffcade8270 .functor AND 1, L_0x7fffcade81d0, v0x7fffcade7990_0, C4<1>, C4<1>;
+L_0x7fffcade8360 .functor AND 1, L_0x7fffcade8270, v0x7fffcade78d0_0, C4<1>, C4<1>;
+L_0x7fffcade8490 .functor OR 1, L_0x7fffcade8160, L_0x7fffcade8360, C4<0>, C4<0>;
+L_0x7fffcade85a0 .functor NOT 1, v0x7fffcade6720_0, C4<0>, C4<0>, C4<0>;
+L_0x7fffcade8660 .functor NOT 1, v0x7fffcade7f00_0, C4<0>, C4<0>, C4<0>;
+L_0x7fffcade8700 .functor AND 1, L_0x7fffcade85a0, L_0x7fffcade8660, C4<1>, C4<1>;
+L_0x7fffcade8850 .functor NOT 1, v0x7fffcade7990_0, C4<0>, C4<0>, C4<0>;
+L_0x7fffcade88c0 .functor AND 1, L_0x7fffcade8700, L_0x7fffcade8850, C4<1>, C4<1>;
+L_0x7fffcade8a40 .functor AND 1, L_0x7fffcade88c0, v0x7fffcade7d70_0, C4<1>, C4<1>;
+L_0x7fffcade8b00 .functor OR 1, L_0x7fffcade8490, L_0x7fffcade8a40, C4<0>, C4<0>;
+v0x7fffcade6720_0 .var "Aux", 0 0;
+v0x7fffcade6800_0 .var "B1", 0 0;
+v0x7fffcade68c0_0 .var "B2", 0 0;
+v0x7fffcade6990_0 .net "Clock", 0 0, v0x7fffcadc67f0_0;  alias, 1 drivers
+v0x7fffcade6a60_0 .net "I", 0 0, v0x7fffcade7d70_0;  1 drivers
+v0x7fffcade6b50_0 .net "R", 0 0, v0x7fffcade7e10_0;  1 drivers
+v0x7fffcade6c10_0 .net "S", 0 0, v0x7fffcade7f00_0;  1 drivers
+v0x7fffcade6cd0_0 .net "Y1", 0 0, L_0x7fffcade8b00;  1 drivers
+v0x7fffcade6d90_0 .net "Y2", 0 0, L_0x7fffcade8050;  1 drivers
+v0x7fffcade6e50_0 .net *"_s0", 0 0, L_0x7fffcadb7770;  1 drivers
+v0x7fffcade6f30_0 .net *"_s10", 0 0, L_0x7fffcade8360;  1 drivers
+v0x7fffcade7010_0 .net *"_s12", 0 0, L_0x7fffcade8490;  1 drivers
+v0x7fffcade70f0_0 .net *"_s14", 0 0, L_0x7fffcade85a0;  1 drivers
+v0x7fffcade71d0_0 .net *"_s16", 0 0, L_0x7fffcade8660;  1 drivers
+v0x7fffcade72b0_0 .net *"_s18", 0 0, L_0x7fffcade8700;  1 drivers
+v0x7fffcade7390_0 .net *"_s20", 0 0, L_0x7fffcade8850;  1 drivers
+v0x7fffcade7470_0 .net *"_s22", 0 0, L_0x7fffcade88c0;  1 drivers
+v0x7fffcade7550_0 .net *"_s24", 0 0, L_0x7fffcade8a40;  1 drivers
+v0x7fffcade7630_0 .net *"_s4", 0 0, L_0x7fffcade8160;  1 drivers
+v0x7fffcade7710_0 .net *"_s6", 0 0, L_0x7fffcade81d0;  1 drivers
+v0x7fffcade77f0_0 .net *"_s8", 0 0, L_0x7fffcade8270;  1 drivers
+v0x7fffcade78d0_0 .var "y1", 0 0;
+v0x7fffcade7990_0 .var "y2", 0 0;
+E_0x7fffcadb9870 .event posedge, v0x7fffcade6b50_0, v0x7fffcadc67f0_0;
+    .scope S_0x7fffcadc64a0;
+T_0 ;
+    %fork t_1, S_0x7fffcadc6620;
+    %jmp t_0;
+    .scope S_0x7fffcadc6620;
+t_1 ;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x7fffcadc67f0_0, 0;
+    %delay 5, 0;
+    %pushi/vec4 1, 0, 1;
+    %assign/vec4 v0x7fffcadc67f0_0, 0;
+    %delay 5, 0;
+    %end;
+    .scope S_0x7fffcadc64a0;
+t_0 %join;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_0x7fffcade6490;
+T_1 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffcade6720_0, 0, 1;
+    %end;
+    .thread T_1;
+    .scope S_0x7fffcade6490;
+T_2 ;
+    %wait E_0x7fffcadb9870;
+    %load/vec4 v0x7fffcade6b50_0;
+    %pad/u 32;
+    %cmpi/e 1, 0, 32;
+    %jmp/0xz  T_2.0, 4;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x7fffcade78d0_0, 0;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x7fffcade7990_0, 0;
+    %load/vec4 v0x7fffcade78d0_0;
+    %store/vec4 v0x7fffcade68c0_0, 0, 1;
+    %load/vec4 v0x7fffcade78d0_0;
+    %load/vec4 v0x7fffcade7990_0;
+    %xor;
+    %store/vec4 v0x7fffcade6800_0, 0, 1;
+    %jmp T_2.1;
+T_2.0 ;
+    %load/vec4 v0x7fffcade6cd0_0;
+    %assign/vec4 v0x7fffcade78d0_0, 0;
+    %load/vec4 v0x7fffcade6d90_0;
+    %assign/vec4 v0x7fffcade7990_0, 0;
+    %load/vec4 v0x7fffcade78d0_0;
+    %store/vec4 v0x7fffcade68c0_0, 0, 1;
+    %load/vec4 v0x7fffcade78d0_0;
+    %load/vec4 v0x7fffcade7990_0;
+    %xor;
+    %store/vec4 v0x7fffcade6800_0, 0, 1;
+    %load/vec4 v0x7fffcade7990_0;
+    %pad/u 32;
+    %cmpi/e 1, 0, 32;
+    %jmp/0xz  T_2.2, 4;
+    %load/vec4 v0x7fffcade78d0_0;
+    %assign/vec4 v0x7fffcade6720_0, 0;
+T_2.2 ;
+T_2.1 ;
+    %jmp T_2;
+    .thread T_2;
+    .scope S_0x7fffcadc6320;
+T_3 ;
+    %vpi_call 2 13 "$display", "Clock R S I B1 B2" {0 0 0};
+    %vpi_call 2 14 "$monitor", "%b %b %b %b %b %b", v0x7fffcade7ca0_0, v0x7fffcade7e10_0, v0x7fffcade7f00_0, v0x7fffcade7d70_0, v0x7fffcade7b10_0, v0x7fffcade7bd0_0 {0 0 0};
+    %delay 0, 0;
+    %delay 15, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffcade7e10_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffcade7f00_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffcade7d70_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffcade7f00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffcade7d70_0, 0, 1;
+    %delay 25, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffcade7f00_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffcade7d70_0, 0, 1;
+    %delay 30, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffcade7f00_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffcade7d70_0, 0, 1;
+    %delay 35, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffcade7f00_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffcade7d70_0, 0, 1;
+    %delay 40, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffcade7f00_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffcade7d70_0, 0, 1;
+    %delay 50, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7fffcade7e10_0, 0, 1;
+    %delay 60, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffcade7e10_0, 0, 1;
+    %delay 70, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffcade7f00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7fffcade7d70_0, 0, 1;
+    %delay 100, 0;
+    %vpi_call 2 49 "$finish" {0 0 0};
+    %end;
+    .thread T_3;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "Ej1Moore_TB.v";
