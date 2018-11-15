@@ -1,4 +1,4 @@
-# TP2 - Electro III
+# TP3 - Electro III
 
 Realización de los ítems pedidos en la consigna del tp.
 ## Getting Started
